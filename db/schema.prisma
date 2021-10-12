@@ -77,10 +77,7 @@ model Choice {
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
   text       String
-  choices    Choice[] @relation("ChoiceToChoice")
   votes      Int      @default(0)
   question   Question @relation(fields: [questionId], references: [id])
   questionId Int
-  Choice     Choice?  @relation("ChoiceToChoice", fields: [choiceId], references: [id])
-  choiceId   Int?
 }

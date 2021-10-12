@@ -6,7 +6,5 @@ CREATE TABLE "Choice" (
     "text" TEXT NOT NULL,
     "votes" INTEGER NOT NULL DEFAULT 0,
     "questionId" INTEGER NOT NULL,
-    "choiceId" INTEGER,
-    CONSTRAINT "Choice_questionId_fkey" FOREIGN KEY ("questionId") REFERENCES "Question" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT "Choice_choiceId_fkey" FOREIGN KEY ("choiceId") REFERENCES "Choice" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+    CONSTRAINT "Choice_questionId_fkey" FOREIGN KEY ("questionId") REFERENCES "Question" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
